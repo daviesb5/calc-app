@@ -1,3 +1,5 @@
+// start @ https://youtu.be/j59qQ7YWLxw?t=1337
+
 // calculator functions
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement){
@@ -18,9 +20,10 @@ class Calculator {
     }
     // 
     appendNumber(number){
-        this.currentOperand = number;
+        // this.currentOperand = number;
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
-    //
+    // When user selects operation
     chooseOperation(operation){
 
     }
@@ -36,7 +39,7 @@ class Calculator {
 
 // const variables
 const numberButtons = document.querySelectorAll('[data-number]');
-const operationButtons = document.querySelectorAll('[data-operations]');
+const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
@@ -50,5 +53,5 @@ numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
-    });
+    })
 })
