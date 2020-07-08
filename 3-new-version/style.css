@@ -3,14 +3,72 @@
 GEN STYLE
 ============================
 */
-
 :root {
     /* Gradient Shades */
     --gradient-1: rgb(18, 1, 54);
     --gradient-2: rgb(3, 90, 166);
+    /* Colors */
+    --light-btn-set: rgb(240, 240, 240);
+    --med-btn-set: rgb(132, 132, 132);
+    --dark-btn-set: rgb(24, 24, 24);
 }
 
 body {
+    box-sizing: border-box;
     font-family: 'Raleway', 'Helvetica', sans-serif;
     padding-bottom: 0px;
+}
+
+/*
+============================
+GENERAL LAYOUT
+============================
+*/
+.calc-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    /* color? */
+    background-color: var(--light-btn-set);
+}
+
+/*
+============================
+DESKTOP
+============================
+*/
+@media only screen and (min-width: 950px){
+}
+
+/*
+============================
+MOBILE - less than 950 px
+============================
+*/
+@media only screen and (max-width: 950px){
+}
+
+/*
+============================
+MOBILE - less than 700 px
+============================
+*/
+@media only screen and (max-width: 700px){
+    .calc-grid {
+        width: 90vw;
+        max-height: 100vh;
+        /* rows & columns */
+        grid-template-columns: repeat (4, 24vw);
+        grid-template-rows: minmax(28.8vh, auto) repeat (5, 24vh);
+    }
+    .calc-grid > button {
+        cursor: pointer;
+        font-size: 1.5rem;
+        border: 1px solid var(--light-btn-set);
+        outline: none;
+        background: var(--dark-btn-set);
+    }
+    .span-two {
+        grid-column: span 2;
+    }
 }
