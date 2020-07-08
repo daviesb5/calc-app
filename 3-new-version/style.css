@@ -1,0 +1,16 @@
+/*
+============================
+GEN STYLE
+============================
+*/
+
+:root {
+    /* Gradient Shades */
+    --gradient-1: rgb(18, 1, 54);
+    --gradient-2: rgb(3, 90, 166);
+}
+
+body {
+    font-family: 'Raleway', 'Helvetica', sans-serif;
+    padding-bottom: 0px;
+}
