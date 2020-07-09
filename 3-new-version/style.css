@@ -37,13 +37,24 @@ ELEMENTS
 */
 .calc-grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* rows & columns */
+    grid-template-columns: repeat(4, 12vw);
+    grid-template-rows: minmax(12vh, auto) repeat(5, 25vh);
 }
 
 /* Output */
 .output {
-
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 12vh;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .previous-operand {
@@ -56,15 +67,18 @@ ELEMENTS
 
 /* Grid Buttons */
 .calc-grid > button {
-
+    max-width: 40vh;
+    justify-content: space-between;
 }
 
 .span-one {
     grid-column: span 1;
+    max-width: 20vw;
 }
 
 .span-two {
     grid-column: span 2;
+    max-width: 40vw;
 }
 /*
 ============================
@@ -99,8 +113,8 @@ MOBILE - less than 700 px
         width: 90vw;
         max-height: 100vh;
         /* rows & columns */
-        grid-template-columns: repeat (4, 24vw);
-        grid-template-rows: minmax(28.8vh, auto) repeat (5, 24vh);
+        grid-template-columns: repeat(4, 20vw);
+        grid-template-rows: minmax(24vh, auto) repeat (5, 20vh);
     }
     .calc-grid > button {
         font-size: 1.5rem;
