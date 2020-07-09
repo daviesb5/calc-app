@@ -11,26 +11,67 @@ GEN STYLE
     --light-btn-set: rgb(240, 240, 240);
     --med-btn-set: rgb(132, 132, 132);
     --dark-btn-set: rgb(24, 24, 24);
+    /* Output */
+    --dark-output: rgb(0, 0, 0);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    /* Fonts */
+    font-family: 'Raleway', 'Helvetica', sans-serif;
+    font-weight: normal;
 }
 
 body {
-    box-sizing: border-box;
-    font-family: 'Raleway', 'Helvetica', sans-serif;
-    padding-bottom: 0px;
+    /* Padding & Margin */
+    padding: 0;
+    margin: 0;
+    /* bg style */
+    background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
 }
 
+/*
+============================
+ELEMENTS
+============================
+*/
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/* Output */
+.output {
+
+}
+
+.previous-operand {
+
+}
+
+.current-operand {
+
+}
+
+/* Grid Buttons */
+.calc-grid > button {
+
+}
+
+.span-one {
+    grid-column: span 1;
+}
+
+.span-two {
+    grid-column: span 2;
+}
 /*
 ============================
 GENERAL LAYOUT
 ============================
 */
-.calc-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    /* color? */
-    background-color: var(--light-btn-set);
-}
+
 
 /*
 ============================
@@ -62,13 +103,6 @@ MOBILE - less than 700 px
         grid-template-rows: minmax(28.8vh, auto) repeat (5, 24vh);
     }
     .calc-grid > button {
-        cursor: pointer;
         font-size: 1.5rem;
-        border: 1px solid var(--light-btn-set);
-        outline: none;
-        background: var(--dark-btn-set);
-    }
-    .span-two {
-        grid-column: span 2;
     }
 }
