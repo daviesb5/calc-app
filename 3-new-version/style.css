@@ -9,6 +9,7 @@ GEN STYLE
     --gradient-2: rgb(3, 90, 166);
     /* Colors */
     --light-btn-set: rgb(240, 240, 240);
+    --light-btn-set-2: rgba(240, 240, 240, 0.75);
     --med-btn-set: rgb(132, 132, 132);
     --dark-btn-set: rgb(24, 24, 24);
     /* Output */
@@ -38,11 +39,32 @@ ELEMENTS
 .calc-grid {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     /* rows & columns */
-    grid-template-columns: repeat(4, 12vw);
-    grid-template-rows: minmax(12vh, auto) repeat(5, 25vh);
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(8rem, auto) repeat(5, 6rem);
+}
+
+/* Grid Buttons */
+.calc-grid > button {
+    border: 1px solid var(--light-btn-set);
+    outline: none;
+    background-color: var(--light-btn-set-2);
+}
+
+.calc-grid > button:hover{
+    background-color: var(--light-btn-set);
+}
+
+.span-one {
+    grid-column: span 1;
+    /* max-width: 20vw; */
+}
+
+.span-two {
+    grid-column: span 2;
+    /* max-width: 40vw; */
 }
 
 /* Output */
@@ -52,34 +74,24 @@ ELEMENTS
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
-    padding: 12vh;
+    padding: 2vh;
     word-wrap: break-word;
     word-break: break-all;
+    /* bg color */
+    color: var(--light-btn-set);
+    background-color: var(--dark-output);
 }
 
-.previous-operand {
-
+.output .previous-operand {
+    color: var(--light-btn-set);
+    opacity: 0.65;
 }
 
-.current-operand {
-
+.output .current-operand {
+    color: var(--light-btn-set);
+    opacity: 0.95;
 }
 
-/* Grid Buttons */
-.calc-grid > button {
-    max-width: 40vh;
-    justify-content: space-between;
-}
-
-.span-one {
-    grid-column: span 1;
-    max-width: 20vw;
-}
-
-.span-two {
-    grid-column: span 2;
-    max-width: 40vw;
-}
 /*
 ============================
 GENERAL LAYOUT
@@ -110,13 +122,30 @@ MOBILE - less than 700 px
 */
 @media only screen and (max-width: 700px){
     .calc-grid {
-        width: 90vw;
-        max-height: 100vh;
-        /* rows & columns */
-        grid-template-columns: repeat(4, 20vw);
-        grid-template-rows: minmax(24vh, auto) repeat (5, 20vh);
+        min-width: 50vw;
+        min-height: 100vh;
     }
     .calc-grid > button {
         font-size: 1.5rem;
+    }
+    .output {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 2vh;
+        word-wrap: break-word;
+        word-break: break-all;
+        /* bg color */
+        color: var(--light-btn-set);
+        background-color: var(--dark-output);
+    }
+    .output .previous-operand {
+        font-size: 2.0rem;
+    }
+    
+    .output .current-operand {
+        font-size: 2.75rem;
     }
 }
