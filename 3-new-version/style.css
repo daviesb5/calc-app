@@ -59,12 +59,10 @@ ELEMENTS
 
 .span-one {
     grid-column: span 1;
-    /* max-width: 20vw; */
 }
 
 .span-two {
     grid-column: span 2;
-    /* max-width: 40vw; */
 }
 
 /* Output */
@@ -122,11 +120,14 @@ MOBILE - less than 700 px
 */
 @media only screen and (max-width: 700px){
     .calc-grid {
-        min-width: 50vw;
-        min-height: 90vh;
+        min-height: 100vh;
+        /* rows & columns */
+        grid-template-columns: repeat(4, 4.5rem);
+        grid-template-rows: minmax(6rem, auto) repeat(5, 4.5rem);
     }
     .calc-grid > button {
-        font-size: 1.5rem;
+        border: 0.5px solid var(--light-btn-set);
+        font-size: 1.25rem;
     }
     .output {
         grid-column: 1 / -1;
@@ -134,7 +135,7 @@ MOBILE - less than 700 px
         align-items: flex-end;
         justify-content: space-between;
         flex-direction: column;
-        padding: 2vh;
+        padding: 1.0vh;
         word-wrap: break-word;
         word-break: break-all;
         /* bg color */
