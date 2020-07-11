@@ -1,5 +1,3 @@
-// start @ https://youtu.be/j59qQ7YWLxw?t=1587
-
 // calculator functions
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
