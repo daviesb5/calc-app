@@ -33,7 +33,7 @@ body {
 
 /*
 ============================
-ELEMENTS
+ELEMENTAL LAYOUTS & STYLES
 ============================
 */
 .calc-grid {
@@ -92,10 +92,37 @@ ELEMENTS
 
 /*
 ============================
-GENERAL LAYOUT
+DESKTOP II – 1440p
 ============================
-*/
 
+@media only screen and (min-width: 2000px){
+    .calc-grid {
+        min-height: 80vh;
+
+        grid-template-columns: repeat(4, 6.5rem);
+        grid-template-rows: minmax(12rem, auto) repeat(5, 6.5rem);
+    }
+    .calc-grid > button {
+        border: 0.75px solid var(--light-btn-set);
+        font-size: 2.25rem;
+    }
+    .output {
+        padding: 2.0rem;
+
+        color: var(--light-btn-set);
+        background-color: var(--dark-output);
+    }
+    .output .previous-operand {
+        font-size: 2.75rem;
+        padding: 0.2rem;
+    }
+    
+    .output .current-operand {
+        font-size: 3.25rem;
+        padding: 0.2rem;
+    }
+}
+*/
 
 /*
 ============================
@@ -107,24 +134,26 @@ DESKTOP
         min-height: 80vh;
         /* rows & columns */
         grid-template-columns: repeat(4, 6.5rem);
-        grid-template-rows: minmax(10rem, auto) repeat(5, 6.5rem);
+        grid-template-rows: minmax(12rem, auto) repeat(5, 6.5rem);
     }
     .calc-grid > button {
         border: 0.75px solid var(--light-btn-set);
         font-size: 2.25rem;
     }
     .output {
-        padding: 1.75rem;
+        padding: 2.0rem;
         /* bg color */
         color: var(--light-btn-set);
         background-color: var(--dark-output);
     }
     .output .previous-operand {
         font-size: 2.75rem;
+        padding: 0.2rem;
     }
     
     .output .current-operand {
         font-size: 3.25rem;
+        padding: 0.2rem;
     }
 }
 
