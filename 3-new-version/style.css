@@ -92,111 +92,103 @@ ELEMENTAL LAYOUTS & STYLES
 
 /*
 ============================
-DESKTOP II – 1440p
+DESKTOP - more than 2500px
 ============================
-
-@media only screen and (min-width: 2000px){
+*/
+@media only screen and (min-width: 2500px){
     .calc-grid {
+        /* rows & columns */
+        grid-template-columns: repeat(4, 8vw);
+        grid-template-rows: minmax(20vh, auto) repeat(5, 14vh);
+    }
+    .calc-grid > button {
+        border: 2.0px solid var(--light-btn-set);
+        font-size: 3.25rem;
+    }
+    .output {
+        padding: 2.0rem;
+        /* bg color */
+        color: var(--light-btn-set);
+        background-color: var(--dark-output);
+    }
+    .output .previous-operand {
+        font-size: 3.25rem;
+    }
+    
+    .output .current-operand {
+        font-size: 4.25rem;
+    }
+}
 
-        grid-template-columns: repeat(4, 6.5rem);
-        grid-template-rows: minmax(12rem, auto) repeat(5, 6.5rem);
+/*
+============================
+DESKTOP - less than 2500px
+============================
+*/
+@media only screen and (max-width: 2500px){
+    .calc-grid {
+        /* rows & columns */
+        grid-template-columns: repeat(4, 6.5vw);
+        grid-template-rows: minmax(18vh, auto) repeat(5, 12vh);
     }
     .calc-grid > button {
         border: 0.75px solid var(--light-btn-set);
         font-size: 2.25rem;
     }
     .output {
-        padding: 2.0rem;
-
+        padding: 2.5rem;
+        /* bg color */
         color: var(--light-btn-set);
         background-color: var(--dark-output);
     }
     .output .previous-operand {
+        font-size: 2.25rem;
+    }
+    
+    .output .current-operand {
         font-size: 2.75rem;
-        padding: 0.2rem;
-    }
-    
-    .output .current-operand {
-        font-size: 3.25rem;
-        padding: 0.2rem;
     }
 }
-*/
 
 /*
 ============================
-DESKTOP
+DESKTOP - less than 1000px
 ============================
 */
-@media only screen and (min-width: 720px){
+@media only screen and (max-width: 1000px){
     .calc-grid {
-        min-height: 80vh;
         /* rows & columns */
-        grid-template-columns: repeat(4, 8rem);
-        grid-template-rows: minmax(12rem, auto) repeat(5, 8rem);
+        grid-template-columns: repeat(4, 12vw);
+        grid-template-rows: minmax(12rem, auto) repeat(5, 6rem);
     }
     .calc-grid > button {
-        border: 0.75px solid var(--light-btn-set);
-        font-size: 2.5rem;
+        border: 0.5px solid var(--light-btn-set);
+        font-size: 2.0rem;
     }
     .output {
-        padding: 2.0rem;
+        padding: 1.75rem;
         /* bg color */
         color: var(--light-btn-set);
         background-color: var(--dark-output);
     }
     .output .previous-operand {
-        font-size: 3.0rem;
-        padding: 0.2rem;
+        font-size: 2.25rem;
     }
     
     .output .current-operand {
-        font-size: 3.25rem;
-        padding: 0.2rem;
+        font-size: 2.75rem;
     }
 }
 
 /*
 ============================
-DESKTOP
+MOBILE - less than 800px
 ============================
 */
-@media only screen and (min-width: 700px){
+@media only screen and (max-width: 800px){
     .calc-grid {
         /* rows & columns */
-        grid-template-columns: repeat(4, 8rem);
-        grid-template-rows: minmax(12rem, auto) repeat(5, 8rem);
-    }
-    .calc-grid > button {
-        border: 0.75px solid var(--light-btn-set);
-        font-size: 2.5rem;
-    }
-    .output {
-        padding: 2.0rem;
-        /* bg color */
-        color: var(--light-btn-set);
-        background-color: var(--dark-output);
-    }
-    .output .previous-operand {
-        font-size: 3.0rem;
-        padding: 0.2rem;
-    }
-    
-    .output .current-operand {
-        font-size: 3.25rem;
-        padding: 0.2rem;
-    }
-}
-
-/*
-============================
-MOBILE - less than 700px
-============================
-*/
-@media only screen and (max-width: 700px){
-    .calc-grid {
-        /* rows & columns */
-        grid-template-columns: repeat(4, 15vw);
+        grid-template-columns: repeat(4, 12vw);
         grid-template-rows: minmax(10rem, auto) repeat(5, 5rem);
     }
     .calc-grid > button {
@@ -220,10 +212,10 @@ MOBILE - less than 700px
 
 /*
 ============================
-MOBILE - less than 500px
+MOBILE - less than 600px
 ============================
 */
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
     .calc-grid {
         /* rows & columns */
         grid-template-columns: repeat(4, 15vw);
@@ -231,7 +223,7 @@ MOBILE - less than 500px
     }
     .calc-grid > button {
         border: 0.5px solid var(--light-btn-set);
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .output {
         padding: 1.75rem;
