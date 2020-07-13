@@ -9,11 +9,11 @@ GEN STYLE
     --gradient-2: rgb(3, 90, 166);
     /* Colors */
     --light-btn-set: rgb(240, 240, 240);
-    --light-btn-set-2: rgba(240, 240, 240, 0.75);
+    --light-btn-set-75: rgba(240, 240, 240, 0.75);
     --med-btn-set: rgb(132, 132, 132);
-    --dark-btn-set: rgb(24, 24, 24);
+    --dark-btn-set: rgba(24, 24, 24, 0.75);
     /* Output */
-    --dark-output: rgb(0, 0, 0);
+    --dark-output: rgba(0, 0, 0, 0.75);
 }
 
 *, *::before, *::after {
@@ -50,7 +50,7 @@ ELEMENTAL LAYOUTS & STYLES
 .calc-grid > button {
     border: 1px solid var(--light-btn-set);
     outline: none;
-    background-color: var(--light-btn-set-2);
+    background-color: var(--light-btn-set-75);
 }
 
 .calc-grid > button:hover{
@@ -128,8 +128,8 @@ DESKTOP - less than 2500px
 @media only screen and (max-width: 2500px){
     .calc-grid {
         /* rows & columns */
-        grid-template-columns: repeat(4, 6.5vw);
-        grid-template-rows: minmax(18vh, auto) repeat(5, 12vh);
+        grid-template-columns: repeat(4, 6.5rem);
+        grid-template-rows: minmax(18vh, auto) repeat(5, 6.5rem);
     }
     .calc-grid > button {
         border: 0.75px solid var(--light-btn-set);
