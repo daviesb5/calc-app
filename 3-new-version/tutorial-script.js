@@ -31,6 +31,7 @@ class Calculator {
         // adds leading zero
         if (number === '.'){
             if (this.currentOperand == ''){
+                alert("Leading Zero Added");
                 this.currentOperand = '0' + number.toString();
                 return
             } else {
